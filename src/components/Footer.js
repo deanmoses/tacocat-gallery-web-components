@@ -1,6 +1,6 @@
 const template = document.createElement('template');
 template.innerHTML = `
-<img src="./tacocat-logo.png" width="102px" height="19px" />
+<img src="./assets/tacocat-logo.png" width="102px" height="19px" />
 `
 
 class Footer extends HTMLElement {
