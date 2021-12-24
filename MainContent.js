@@ -1,13 +1,11 @@
 const template = document.createElement('template');
 template.innerHTML = `
-<main>maincontent</main>
+<main><slot></slot></main>
 `
 
-class MainContent extends HTMLElement {
+customElements.define('tacocat-maincontent', class extends HTMLElement {
     connectedCallback() {
-        const node = document.importNode(template.content, true);
-        this.appendChild(node);
+        let shadowRoot = this.attachShadow({mode: 'open'});
+        shadowRoot.appendChild(template.content.cloneNode(true));
     }
-}
-
-customElements.define( 'tacocat-maincontent', MainContent );
+  });

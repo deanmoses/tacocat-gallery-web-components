@@ -125,7 +125,7 @@ tacocat-header .page-title {
     font-size: 28px;
 }
 
-.body {
+tacocat-pagecontent {
     flex: 1;
     display: flex;
     border-left: var(--default-border);
@@ -141,7 +141,7 @@ tacocat-sidebar {
     border-right: var(--default-border);
 }
 
-.main-content {
+tacocat-maincontent {
     flex: 3;
     padding: var(--default-padding);
     background-color: white;
@@ -152,7 +152,7 @@ tacocat-sidebar {
 }
 
 @media (max-width: 456px) {
-    .main-content { 
+    tacocat-maincontent { 
         display: flex;
         align-items: center;
         justify-content: center;
@@ -183,18 +183,18 @@ tacocat-nav .btn {
     padding-bottom: .2em;
 }
 
-.nav-buttons .btn svg {
+tacocat-nav .btn svg {
     display: inline;
     position: relative;
     bottom: 0.125em;
     vertical-align: middle;
 }
 
-.nav-buttons .btn[aria-disabled="true"] {
+tacocat-nav .btn[aria-disabled="true"] {
     color: #ccc;
 }
 
-.nav-buttons .btn:nth-child(2) {
+tacocat-nav .btn:nth-child(2) {
     border-left: 1px solid rgb(132, 132, 132);
     border-right: 1px solid rgb(132, 132, 132);
 }

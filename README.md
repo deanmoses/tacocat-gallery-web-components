@@ -1,2 +1,2 @@
 # tacocat-gallery-web-components
- Tacocat Gallery Pure Web Component
+ Experimentation with using pure web components (custom elements) to render Tacocat Gallery
