@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel='stylesheet' href='./index.css'>
+        <script src="./Page.js" type="module"></script> 
+        <script src="./Nav.js" type="module"></script> 
+        <script src="./Header.js" type="module"></script> 
+        <script src="./Footer.js" type="module"></script> 
+        <script src="./PageContent.js" type="module"></script> 
+        <script src="./MainContent.js" type="module"></script> 
+        <script src="./HelloWorld.js" type="module"></script> 
+
+    </head>
+    <body>
+        <tacocat-page>
+            <tacocat-header>
+                <span slot="title">Normal length title</span>
+                <span slot="short-title">Short title</span>
+            </tacocat-header>
+            <tacocat-nav role="navigation"></tacocat-nav>
+            <tacocat-pagecontent>
+                <tacocat-sidebar></tacocat-sidebar>
+                <tacocat-maincontent>
+                    <hello-world/>
+                </tacocat-maincontent>
+            </tacocat-pagecontent>
+            <tacocat-footer></tacocat-footer>
+        </tacocat-page>
+    </body>
+</html>

@@ -1,0 +1,220 @@
+/**
+ * CSS RESET 
+ * From https://www.joshwcomeau.com/css/custom-css-reset/
+ */
+
+/*
+    Use a more-intuitive box-sizing model
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+    Remove default margin
+*/
+* {
+    margin: 0;
+}
+
+/*
+    Allow percentage-based heights in the application
+*/
+html,
+body {
+    height: 100%;
+}
+
+/*
+    Typographic tweaks:
+    Add accessible line-height
+    Improve text rendering
+*/
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+    Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+    Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+    Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+    Create a root stacking context
+*/
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/**
+ * END CSS RESET
+ */
+
+@media (max-width: 767px) {
+    .hidden-sm {
+        display: none !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hidden-xs {
+        display: none !important;
+    }
+}
+
+@media (min-width: 576px) {
+    .visible-xs {
+        display: none !important;
+    }
+}
+
+tacocat-page {
+    --default-padding: .5em;
+    --default-border: solid black 1px;
+
+    min-height: 100%;
+    font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    padding: .7em;
+    background-color: #94949c;
+}
+
+tacocat-header {
+    padding: var(--default-padding);
+    background-color: f7de5a;
+    border: var(--default-border);
+}
+
+tacocat-header .page-title {
+    font-size: 28px;
+}
+
+.body {
+    flex: 1;
+    display: flex;
+    border-left: var(--default-border);
+    border-right: var(--default-border);
+    border-bottom: var(--default-border);
+}
+
+tacocat-sidebar {
+    flex: 1;
+    min-width: 8em;
+    padding: var(--default-padding);
+    background-color: #838470;
+    border-right: var(--default-border);
+}
+
+.main-content {
+    flex: 3;
+    padding: var(--default-padding);
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    
+}
+
+@media (max-width: 456px) {
+    .main-content { 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+tacocat-footer {
+    flex: 0 0 1.7em;
+    padding-top: var(--default-padding);
+}
+
+tacocat-nav {
+    display: flex;
+    border-left: var(--default-border);
+    border-right: var(--default-border);
+    border-bottom: var(--default-border);
+}
+
+tacocat-nav .btn {
+    flex: 1;
+    background-color: #cec68c;
+    color: #333;
+    border-color: #ccc;
+    text-align: center;
+    border: 1px solid transparent;
+    text-decoration: none;
+    padding-top: .2em;
+    padding-bottom: .2em;
+}
+
+.nav-buttons .btn svg {
+    display: inline;
+    position: relative;
+    bottom: 0.125em;
+    vertical-align: middle;
+}
+
+.nav-buttons .btn[aria-disabled="true"] {
+    color: #ccc;
+}
+
+.nav-buttons .btn:nth-child(2) {
+    border-left: 1px solid rgb(132, 132, 132);
+    border-right: 1px solid rgb(132, 132, 132);
+}
+
+.btn[aria-disabled="true"] {
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    opacity: .65;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.thumbnail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4px;
+}
+
+.thumbnail a {
+    text-decoration: none;
+    color: black;
+}
