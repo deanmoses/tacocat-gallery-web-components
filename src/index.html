@@ -1,27 +1,45 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel='stylesheet' href='./index.css'>
-        <script src="components/Page.js" type="module"></script> 
-        <script src="components/Nav.js" type="module"></script> 
-        <script src="components/Header.js" type="module"></script> 
-        <script src="components/Footer.js" type="module"></script> 
-        <script src="components/PageContent.js" type="module"></script> 
-        <script src="components/MainContent.js" type="module"></script> 
-        <script src="components/HelloWorld.js" type="module"></script> 
-
+        <link rel='stylesheet' href='reset.css'>
+        <link rel='stylesheet' href='index.css'>
+        <script type="module" src="components/Page.js" ></script> 
+        <script type="module" src="components/Nav.js"></script> 
+        <script type="module" src="components/Header.js"></script> 
+        <script type="module" src="components/Footer.js"></script> 
+        <script type="module" src="components/PageContent.js"></script> 
+        <script type="module" src="components/MainContent.js"></script>
+        <script type="module" src="components/Sidebar.js"></script>
+        <script type="module" src="components/Thumbnail.js"></script>
+        <script type="module" src="components/Button.js"></script>
+        <script type="module" src="components/PrevButton.js"></script>
+        <script type="module" src="components/NextButton.js"></script>
+        <script type="module" src="components/UpButton.js"></script>
     </head>
     <body>
         <tacocat-page>
             <tacocat-header>
-                <span slot="title">Normal length title</span>
-                <span slot="short-title">Short title</span>
+                <span slot="title">Dean, Lucie, Felix and Milo Moses</span>
+                <span slot="short-title">The Moses Family</span>
             </tacocat-header>
-            <tacocat-nav role="navigation"></tacocat-nav>
+            <tacocat-nav role="navigation">
+                <tacocat-prevbutton class="navbutton" title="2020"></tacocat-prevbutton>
+                <tacocat-upbutton class="navbutton" title="All Years"></tacocat-upbutton>
+                <tacocat-nextbutton class="navbutton" disabled></tacocat-nextbutton>
+            </tacocat-nav>
             <tacocat-pagecontent>
-                <tacocat-sidebar></tacocat-sidebar>
+                <tacocat-sidebar class="hidden-sm">
+                    sidebar
+                </tacocat-sidebar>
                 <tacocat-maincontent>
-                    <hello-world/>
+                    <tacocat-thumbnail></tacocat-thumbnail>
+                    <tacocat-thumbnail></tacocat-thumbnail>
+                    <tacocat-thumbnail></tacocat-thumbnail>
+                    <tacocat-thumbnail></tacocat-thumbnail>
+                    <tacocat-thumbnail></tacocat-thumbnail>
+                    <tacocat-thumbnail></tacocat-thumbnail>
+                    <tacocat-thumbnail></tacocat-thumbnail>
+                    <tacocat-thumbnail></tacocat-thumbnail>
                 </tacocat-maincontent>
             </tacocat-pagecontent>
             <tacocat-footer></tacocat-footer>

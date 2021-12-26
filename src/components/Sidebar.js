@@ -1,13 +1,11 @@
 const template = document.createElement('template');
 template.innerHTML = `
-<div class="hidden-sm">sidebar</div>
+<aside><slot></slot></aside>
 `
 
-class Sidebar extends HTMLElement {
+customElements.define('tacocat-sidebar', class extends HTMLElement {
     connectedCallback() {
-        const node = document.importNode(template.content, true);
-        this.appendChild(node);
+        let shadowRoot = this.attachShadow({ mode: 'open' });
+        shadowRoot.appendChild(template.content.cloneNode(true));
     }
-}
-
-customElements.define( 'tacocat-sidebar', Sidebar );
+});

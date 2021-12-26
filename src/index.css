@@ -1,88 +1,13 @@
-/**
- * CSS RESET 
- * From https://www.joshwcomeau.com/css/custom-css-reset/
- */
+/***
 
-/*
-    Use a more-intuitive box-sizing model
+THE FOLLOWING RULES DON'T WORK IN WEB COMPONENTS
+... because of Shadow DOM.  These rules would need
+to affect stuff within the web component, and that's not allowed.
+... but they *DO* work in custom elements, which don't have Shadow DOM.  
+Shadow DOM is the difference between a web component and a custom element.
+... unfortunately, to get named slots you need a web component.
+... so the choice is either named slots or global CSS, but not both.
 */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-/*
-    Remove default margin
-*/
-* {
-    margin: 0;
-}
-
-/*
-    Allow percentage-based heights in the application
-*/
-html,
-body {
-    height: 100%;
-}
-
-/*
-    Typographic tweaks:
-    Add accessible line-height
-    Improve text rendering
-*/
-body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-}
-
-/*
-    Improve media defaults
-*/
-img,
-picture,
-video,
-canvas,
-svg {
-    display: block;
-    max-width: 100%;
-}
-
-/*
-    Remove built-in form typography styles
-*/
-input,
-button,
-textarea,
-select {
-    font: inherit;
-}
-
-/*
-    Avoid text overflows
-*/
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    overflow-wrap: break-word;
-}
-
-/*
-    Create a root stacking context
-*/
-#root,
-#__next {
-    isolation: isolate;
-}
-
-/**
- * END CSS RESET
- */
 
 @media (max-width: 767px) {
     .hidden-sm {
@@ -102,6 +27,15 @@ h6 {
     }
 }
 
+/* Since the header is a web component, this doesn't work */
+tacocat-header .page-title {
+    font-size: 28px;
+}
+
+/*
+END RULES THAT DON'T WORK IN WEB COMPONENTS
+***/
+
 tacocat-page {
     --default-padding: .5em;
     --default-border: solid black 1px;
@@ -119,10 +53,6 @@ tacocat-header {
     padding: var(--default-padding);
     background-color: f7de5a;
     border: var(--default-border);
-}
-
-tacocat-header .page-title {
-    font-size: 28px;
 }
 
 tacocat-pagecontent {
@@ -148,7 +78,6 @@ tacocat-maincontent {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    
 }
 
 @media (max-width: 456px) {
@@ -170,42 +99,24 @@ tacocat-nav {
     border-right: var(--default-border);
     border-bottom: var(--default-border);
 }
-
-tacocat-nav .btn {
+tacocat-nav .navbutton {
     flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.2em;
+  
     background-color: #cec68c;
     color: #333;
     border-color: #ccc;
-    text-align: center;
     border: 1px solid transparent;
-    text-decoration: none;
     padding-top: .2em;
     padding-bottom: .2em;
 }
-
-tacocat-nav .btn svg {
-    display: inline;
-    position: relative;
-    bottom: 0.125em;
-    vertical-align: middle;
-}
-
-tacocat-nav .btn[aria-disabled="true"] {
-    color: #ccc;
-}
-
-tacocat-nav .btn:nth-child(2) {
+tacocat-nav .navbutton:nth-child(2) {
     border-left: 1px solid rgb(132, 132, 132);
     border-right: 1px solid rgb(132, 132, 132);
-}
-
-.btn[aria-disabled="true"] {
-    cursor: not-allowed;
-    filter: alpha(opacity=65);
-    opacity: .65;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
 
 .thumbnail {
     display: flex;

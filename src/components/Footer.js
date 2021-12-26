@@ -1,6 +1,14 @@
 const template = document.createElement('template');
 template.innerHTML = `
-<img src="./assets/tacocat-logo.png" width="102px" height="19px" />
+<style>
+    :host {
+        flex: 0 0 1.7em;
+        padding-top: var(--default-padding);
+    }
+</style>
+<footer>
+    <img src="./assets/tacocat-logo.png" width="102px" height="19px" />
+</footer>
 `
 
 class Footer extends HTMLElement {
