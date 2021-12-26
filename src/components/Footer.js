@@ -3,6 +3,8 @@ template.innerHTML = `
 <style>
     :host {
         flex: 0 0 1.7em;
+    }
+    footer {
         padding-top: var(--default-padding);
     }
 </style>

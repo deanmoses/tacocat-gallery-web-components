@@ -1,33 +1,14 @@
 const template = document.createElement('template');
 template.innerHTML = `
+<link href="reset.css" rel="stylesheet">
+<link href="index.css" rel="stylesheet">
 <style>
-    @media (max-width: 767px) {
-        .hidden-sm {
-            display: none !important;
-        }
-    }
-
-    @media (max-width: 576px) {
-        .hidden-xs {
-            display: none !important;
-        }
-    }
-
-    @media (min-width: 576px) {
-        .visible-xs {
-            display: none !important;
-        }
-    }
-
-    .page-title {
+    h1 {
         font-size: 28px;
     }
 </style>
-
-<div class="page-title">
-    <span class="hidden-xs""><slot name="title"></slot></span>
-    <span class="visible-xs"><slot name="short-title"></slot></span>
-</div>
+<h1 class="hidden-xs" class="page-title"><slot name="title"></slot></h1>
+<h1 class="visible-xs" class="page-title"><slot name="short-title"></slot></h1>
 `
 
 customElements.define('tacocat-header', class extends HTMLElement {

@@ -1,40 +1,34 @@
-/***
-
-THE FOLLOWING RULES DON'T WORK IN WEB COMPONENTS
-... because of Shadow DOM.  These rules would need
-to affect stuff within the web component, and that's not allowed.
-... but they *DO* work in custom elements, which don't have Shadow DOM.  
-Shadow DOM is the difference between a web component and a custom element.
-... unfortunately, to get named slots you need a web component.
-... so the choice is either named slots or global CSS, but not both.
+/**
+    To make the following rules work in web components that use Shadow DOM,
+    the component must import this stylesheet.
 */
 
 @media (max-width: 767px) {
-    .hidden-sm {
+    .hidden-sm, ::slotted(.hidden-sm) {
         display: none !important;
     }
 }
 
 @media (max-width: 576px) {
-    .hidden-xs {
+    .hidden-xs, ::slotted(.hidden-xs) {
         display: none !important;
     }
 }
 
 @media (min-width: 576px) {
-    .visible-xs {
+    .visible-xs, ::slotted(.visible-xs) {
         display: none !important;
     }
 }
 
-/* Since the header is a web component, this doesn't work */
-tacocat-header .page-title {
-    font-size: 28px;
-}
-
 /*
-END RULES THAT DON'T WORK IN WEB COMPONENTS
-***/
+    END RULES THAT NEED TO REACH INTO WEB COMPONENTS
+**/
+
+/**
+    TODO: move the following rules into their components, 
+    converting the components to shadow DOM at the same time
+*/
 
 tacocat-page {
     --default-padding: .5em;
@@ -78,54 +72,4 @@ tacocat-maincontent {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-}
-
-@media (max-width: 456px) {
-    tacocat-maincontent { 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
-tacocat-footer {
-    flex: 0 0 1.7em;
-    padding-top: var(--default-padding);
-}
-
-tacocat-nav {
-    display: flex;
-    border-left: var(--default-border);
-    border-right: var(--default-border);
-    border-bottom: var(--default-border);
-}
-tacocat-nav .navbutton {
-    flex: 1;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 0.2em;
-  
-    background-color: #cec68c;
-    color: #333;
-    border-color: #ccc;
-    border: 1px solid transparent;
-    padding-top: .2em;
-    padding-bottom: .2em;
-}
-tacocat-nav .navbutton:nth-child(2) {
-    border-left: 1px solid rgb(132, 132, 132);
-    border-right: 1px solid rgb(132, 132, 132);
-
-.thumbnail {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 4px;
-}
-
-.thumbnail a {
-    text-decoration: none;
-    color: black;
 }
