@@ -25,6 +25,5 @@ customElements.define('tacocat-sidebar', class extends HTMLElement {
         shadowRoot.appendChild(template.content.cloneNode(true));
 
         this.shadowRoot.host.classList.add("hidden-sm");
-        this.shadowRoot.host.setAttribute("role", "section");
     }
 });

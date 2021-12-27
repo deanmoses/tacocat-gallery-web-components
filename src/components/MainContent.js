@@ -27,7 +27,5 @@ customElements.define('tacocat-maincontent', class extends HTMLElement {
     connectedCallback() {
         let shadowRoot = this.attachShadow({mode: 'open'});
         shadowRoot.appendChild(template.content.cloneNode(true));
-
-        this.shadowRoot.host.setAttribute("role", "section");
     }
   });
