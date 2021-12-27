@@ -1,7 +1,3 @@
-let title = "Dec 21";
-let linkUrl = "#2021/12-20";
-let imgUrl = "https://cdn.tacocat.com/zenphoto/cache/2021/12-20/xmas_restaurant2_200_w200_h200_cw200_ch200_thumb.jpg?cached=1640062642";
-
 const template = document.createElement('template');
 template.innerHTML = `
 <style>
@@ -28,12 +24,33 @@ template.innerHTML = `
         border: var(--default-border);
     }
 </style>
-<a href="${linkUrl}"><img src="${imgUrl}"alt="${title}"></a><a href="${linkUrl}">${title}</a>
+<a><img></a><a></a>
 `
 
 customElements.define('tacocat-thumbnail', class extends HTMLElement {
+
     connectedCallback() {
         let shadowRoot = this.attachShadow({mode: 'open'});
         shadowRoot.appendChild(template.content.cloneNode(true));
+
+        let a1, a2, img;
+
+        [a1, a2] = this.shadowRoot.querySelectorAll("a");
+        img = this.shadowRoot.querySelector("img");
+
+        if (this.hasAttribute('href') && !!this.getAttribute('href')) {
+            a1.setAttribute("href", this.getAttribute('href') );
+            a2.setAttribute("href", this.getAttribute('href') );
+        }
+
+        if (this.hasAttribute('src') && !!this.getAttribute('src')) {
+            img.setAttribute("src", this.getAttribute('src'));
+        }
+
+        if (this.hasAttribute('title') && !!this.getAttribute('title')) {
+            img.setAttribute("alt", this.getAttribute('title'));
+            a2.textContent = this.getAttribute('title');
+        }
     }
+
 });
