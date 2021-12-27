@@ -1,8 +1,11 @@
 const template = document.createElement('template');
 template.innerHTML = `
+<link href="reset.css" rel="stylesheet">
+<link href="index.css" rel="stylesheet">
 <style>
     main {
         flex: 3;
+        gap: var(--default-padding);
         padding: var(--default-padding);
         background-color: white;
         display: flex;
