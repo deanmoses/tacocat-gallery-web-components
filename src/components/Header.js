@@ -3,6 +3,12 @@ template.innerHTML = `
 <link href="reset.css" rel="stylesheet">
 <link href="index.css" rel="stylesheet">
 <style>
+    :host {
+        padding: var(--default-padding);
+        background-color: f7de5a;
+        border: var(--default-border);
+    }
+    
     h1 {
         font-size: 28px;
     }

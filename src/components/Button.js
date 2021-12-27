@@ -5,6 +5,18 @@ template.innerHTML = `
 <style>
     a {
         text-decoration: none;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 0.2em;
+      
+        background-color: #cec68c;
+        color: #333;
+        border-color: #ccc;
+        border: 1px solid transparent;
+        padding-top: .2em;
+        padding-bottom: .2em;
     }
 
     a[aria-disabled="true"] {

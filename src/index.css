@@ -20,39 +20,3 @@
         display: none !important;
     }
 }
-
-/*
-    END RULES THAT NEED TO REACH INTO WEB COMPONENTS
-**/
-
-/**
-    TODO: move the following rules into their components, 
-    converting the components to shadow DOM at the same time
-*/
-
-tacocat-page {
-    --default-padding: .5em;
-    --default-border: solid black 1px;
-
-    min-height: 100%;
-    font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    display: flex;
-    flex-direction: column;
-    padding: .7em;
-    background-color: #94949c;
-}
-
-tacocat-header {
-    padding: var(--default-padding);
-    background-color: f7de5a;
-    border: var(--default-border);
-}
-
-tacocat-pagecontent {
-    flex: 1;
-    display: flex;
-    border-left: var(--default-border);
-    border-right: var(--default-border);
-    border-bottom: var(--default-border);
-}
