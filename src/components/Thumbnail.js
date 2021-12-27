@@ -5,7 +5,6 @@ template.innerHTML = `
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 4px;
     }
     a {
         text-decoration: none;

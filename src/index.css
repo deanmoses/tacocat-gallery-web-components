@@ -56,20 +56,3 @@ tacocat-pagecontent {
     border-right: var(--default-border);
     border-bottom: var(--default-border);
 }
-
-tacocat-sidebar {
-    flex: 1;
-    min-width: 8em;
-    padding: var(--default-padding);
-    background-color: #838470;
-    border-right: var(--default-border);
-}
-
-tacocat-maincontent {
-    flex: 3;
-    padding: var(--default-padding);
-    background-color: white;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-}

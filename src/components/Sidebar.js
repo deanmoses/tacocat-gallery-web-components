@@ -1,6 +1,14 @@
 const template = document.createElement('template');
 template.innerHTML = `
 <style>
+    :host {
+        flex: 1;
+        min-width: 8em;
+        padding: var(--default-padding);
+        background-color: #838470;
+        border-right: var(--default-border);
+    }
+
     h2 {
         display: none;
     }

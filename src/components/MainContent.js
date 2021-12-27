@@ -3,29 +3,31 @@ template.innerHTML = `
 <link href="reset.css" rel="stylesheet">
 <link href="index.css" rel="stylesheet">
 <style>
-    main {
+    :host {
         flex: 3;
-        gap: var(--default-padding);
-        padding: var(--default-padding);
+        gap: calc(var(--default-padding) * 2);
+        padding: calc(var(--default-padding) * 2);
         background-color: white;
         display: flex;
         flex-wrap: wrap;
         align-content: flex-start;
     }
     @media (max-width: 456px) {
-        main {
+        :host {
           display: flex;
           align-items: center;
           justify-content: center;
         }
     }
 </style>
-<main><slot></slot></main>
+<slot></slot>
 `
 
 customElements.define('tacocat-maincontent', class extends HTMLElement {
     connectedCallback() {
         let shadowRoot = this.attachShadow({mode: 'open'});
         shadowRoot.appendChild(template.content.cloneNode(true));
+
+        this.shadowRoot.host.setAttribute("role", "section");
     }
   });
