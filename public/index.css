@@ -1,6 +1,5 @@
-/**
-    To make the following rules work in web components that use Shadow DOM,
-    the component must import this stylesheet.
+/*
+    Because of Shadow DOM, components must themselves import this stylesheet to use these styles
 */
 
 @media (max-width: 767px) {

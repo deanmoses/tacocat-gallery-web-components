@@ -1,3 +1,7 @@
+/*
+    Because of Shadow DOM, components must themselves import this stylesheet to use these styles
+*/
+
 /**
  * CSS RESET FROM https://www.joshwcomeau.com/css/custom-css-reset/
  */
