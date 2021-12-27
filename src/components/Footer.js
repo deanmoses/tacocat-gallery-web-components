@@ -6,7 +6,7 @@ template.innerHTML = `
         padding-top: var(--default-padding);
     }
 </style>
-<img src="./assets/tacocat-logo.png" width="102px" height="19px" />
+<img src="images/tacocat-logo.png" width="102px" height="19px" />
 `
 customElements.define('tacocat-footer', class extends HTMLElement {
 
