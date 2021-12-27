@@ -16,14 +16,18 @@ template.innerHTML = `
         box-shadow: none;
     }
 </style>
-<!-- TODO: implement <a aria-disabled="true" /> -->
-<a class="btn"><slot></slot></a>
+<a><slot></slot></a>
 `
 customElements.define('tacocat-button', class extends HTMLElement {
 
     constructor() {
         super();
         this.attachShadow({mode: 'open'}).appendChild(template.content.cloneNode(true));
+
+        if (this.hasAttribute('disabled')) {
+            let a = this.shadowRoot.querySelector("a:first-of-type");
+            a.setAttribute("aria-disabled", "true");
+        }        
     }
 
 });

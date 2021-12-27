@@ -8,7 +8,7 @@ customElements.define('tacocat-upbutton', class extends HTMLElement {
 
     html() {
         let title = !this.hasAttribute('title') ? '' : this.getAttribute('title');
-        let disabled = !this.hasAttribute('disabled') ? '' : 'aria-disabled="true"';
+        let disabled = !this.hasAttribute('disabled')  ? '' : 'disabled';
         let svg=`<svg class="icon" style="width: 1.2em; height: 1.25em;" viewBox="0 0 20 20">
             <title>All Years</title>
             <path style="fill: currentcolor;"

@@ -8,7 +8,7 @@
 
     html() {
         let title = !this.hasAttribute('title') ? '' : this.getAttribute('title');
-        let disabled = !this.hasAttribute('disabled') ? '' : 'aria-disabled="true"';
+        let disabled = !this.hasAttribute('disabled')  ? '' : 'disabled';
         let svg = `<svg style="width: 1em; height: 1em;" viewBox="0 0 749 1102">
             <title>Previous</title>
             <path style="fill: currentcolor;" d="M749 198L397 551l352 353-197 198L0 550 552 0z"></path>
