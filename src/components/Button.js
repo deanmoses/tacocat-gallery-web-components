@@ -17,14 +17,14 @@ template.innerHTML = `
         border: 1px solid transparent;
         padding-top: .2em;
         padding-bottom: .2em;
+
+        height: 100%;
     }
 
     a[aria-disabled="true"] {
         color: #ccc;
         cursor: not-allowed;
-        filter: alpha(opacity=65);
         opacity: .65;
-        -webkit-box-shadow: none;
         box-shadow: none;
     }
 </style>
@@ -32,14 +32,27 @@ template.innerHTML = `
 `
 customElements.define('tacocat-button', class extends HTMLElement {
 
-    constructor() {
-        super();
-        this.attachShadow({mode: 'open'}).appendChild(template.content.cloneNode(true));
+    static get observedAttributes() {
+        return ['disabled'];
+    }
+    
+    connectedCallback() {
+        this.attachShadow({ mode: 'open' });
+        this.shadowRoot.appendChild(template.content.cloneNode(true));
+    }
 
-        if (this.hasAttribute('disabled')) {
-            let a = this.shadowRoot.querySelector("a:first-of-type");
-            a.setAttribute("aria-disabled", "true");
-        }        
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (!!this.shadowRoot) {
+            if ("disabled" === name) {
+                if (this.hasAttribute('disabled')) {
+                    let a = this.shadowRoot.querySelector("a:first-of-type");
+                    a.setAttribute("aria-disabled", "true");
+                } else {
+                    let a = this.shadowRoot.querySelector("a:first-of-type");
+                    a.removeAttribute("aria-disabled");
+                }
+            }
+        }
     }
 
 });
