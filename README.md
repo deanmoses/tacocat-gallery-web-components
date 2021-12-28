@@ -6,4 +6,6 @@ This has zero libraries or dependencies; it's plain vanilla standard browser JS 
 
 ## How to use
 
-There's no build or compilation: simply open `index.html` in a brower.
+There's no build or compilation: simply open `index.html` in a browser.  
+
+You won't see much unless you disable cross-origin resource sharing (CORS) restrictions.  It's easy in Safari if you have the developer menu installed: just select the 'Disable Cross-Origin Restrictions' menu item.
